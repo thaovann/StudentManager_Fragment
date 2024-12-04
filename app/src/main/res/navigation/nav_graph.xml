@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/studentListFragment">
+
+    <!-- Student List Fragment -->
+    <fragment
+        android:id="@+id/studentListFragment"
+        android:name="com.example.studentman3.StudentListFragment"
+        android:label="Student List">
+
+        <!-- Action to Add Student Fragment -->
+        <action
+            android:id="@+id/action_studentListFragment_to_addStudentFragment"
+            app:destination="@id/addStudentFragment" />
+
+        <!-- Action to Edit Student Fragment -->
+        <action
+            android:id="@+id/action_studentListFragment_to_editStudentFragment"
+            app:destination="@id/editStudentFragment">
+            <argument
+                android:name="studentName"
+                app:argType="string" />
+            <argument
+                android:name="studentId"
+                app:argType="string" />
+            <argument
+                android:name="studentIndex"
+                app:argType="integer" />
+        </action>
+    </fragment>
+
+    <!-- Add Student Fragment -->
+    <fragment
+        android:id="@+id/addStudentFragment"
+        android:name="com.example.studentman3.AddStudentFragment"
+        android:label="Add Student" />
+
+    <!-- Edit Student Fragment -->
+    <fragment
+        android:id="@+id/editStudentFragment"
+        android:name="com.example.studentman3.EditStudentFragment"
+        android:label="Edit Student">
+        <argument
+            android:name="studentName"
+            app:argType="string" />
+        <argument
+            android:name="studentId"
+            app:argType="string" />
+        <argument
+            android:name="studentIndex"
+            app:argType="integer" />
+    </fragment>
+
+</navigation>
